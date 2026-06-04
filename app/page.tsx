@@ -1,6 +1,7 @@
 import AppBar from "@/components/appbar/Appbar";
 import VideoPage from "./components/video-page";
 import WacthList from "./components/videoFetch";
+import Link from "next/link";
 
 export default async function Home() {
   const res = await fetch(
@@ -30,7 +31,7 @@ export default async function Home() {
 
   return (
     <>
-      <AppBar
+      {/* <AppBar
         title={profile.title}
         avatar={profile.avatar}
         description={profile.description}
@@ -42,6 +43,45 @@ export default async function Home() {
 
         <WacthList />
 
+      </div> */}
+
+      <div className="flex h-screen w-full flex-col items-center justify-center gap-4 text-center">
+        <h1 className="text-3xl font-bold">
+          เว็บไซต์นี้อยู่ในขั้นตอนการพัฒนาใหม่
+        </h1>
+
+        <p className="text-muted-foreground">
+          สามารถเข้าชมโปรเจกต์อื่น ๆ ได้ที่
+        </p>
+
+        <div className="flex flex-col gap-2">
+          <Link
+            href="https://port.toramaru.cc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            Portfolio
+          </Link>
+
+          <Link
+            href="https://bytetiger.vercel.app"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            ByteTiger
+          </Link>
+
+          <Link
+            href="https://lhzn.toramaru.cc"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 hover:underline"
+          >
+            Team Website
+          </Link>
+        </div>
       </div>
     </>
   );
